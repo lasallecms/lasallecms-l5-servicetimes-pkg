@@ -29,10 +29,32 @@
  */
 
 /*
- * Admin auth routes
+ * Admin routes
  */
-$router->get('admin/login', [
-    'as'   => 'admin.login',
-    'uses' => 'AdminAuth\AdminLoginController@getLogin'
+Route::group(array('prefix' => 'admin'), function()
+{
+    Route::resource('servicetimes', 'AdminServicetimesController');
+    Route::post('servicetimes/confirmDeletion/{id}', 'AdminServicetimesController@confirmDeletion');
+    Route::post('servicetimes/confirmDeletionMultipleRows', 'AdminServicetimesController@confirmDeletionMultipleRows');
+    Route::post('servicetimes/destroyMultipleRecords', 'AdminServicetimesController@destroyMultipleRecords');
+
+    Route::resource('luservicetimesholiday', 'AdminServicetimesholidayController');
+    Route::post('luservicetimesholiday/confirmDeletion/{id}', 'AdminServicetimesholidayController@confirmDeletion');
+    Route::post('luservicetimesholiday/confirmDeletionMultipleRows', 'AdminServicetimesholidayController@confirmDeletionMultipleRows');
+    Route::post('luservicetimesholiday/destroyMultipleRecords', 'AdminServicetimesholidayController@destroyMultipleRecords');
+
+    Route::resource('luservicetimesservicetype', 'AdminServicetypeController');
+    Route::post('luservicetimesservicetype/confirmDeletion/{id}', 'AdminServicetypeController@confirmDeletion');
+    Route::post('luservicetimesservicetype/confirmDeletionMultipleRows', 'AdminServicetypeController@confirmDeletionMultipleRows');
+    Route::post('luservicetimesservicetype/destroyMultipleRecords', 'AdminServicetypeController@destroyMultipleRecords');
+});
+
+/*
+ * frontend routes
+ */
+$router->get('servicetimes/display1', [
+    'as'   => 'servicetimes.display1',
+    'uses' => 'ServicetimesController@displayFrontend1'
 ]);
+
 

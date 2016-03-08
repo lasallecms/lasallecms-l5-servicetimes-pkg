@@ -53,40 +53,18 @@ class ServicetimesServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->setupConfiguration();
+        //$this->setupConfiguration();
 
         $this->setupMigrations();
         $this->setupSeeds();
 
         $this->setupRoutes($this->app->router);
 
-        $this->setupTranslations();
+        //$this->setupTranslations();
 
-        $this->setupViews();
+        //$this->setupViews();
 
         //$this->setupAssets();
-    }
-
-
-    /**
-     * Boot the service provider.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->setupConfiguration();
-
-        $this->setupMigrations();
-        $this->setupSeeds();
-
-        $this->setupRoutes($this->app->router);
-
-        $this->setupTranslations();
-
-        $this->setupViews();
-
-        $this->setupAssets();
     }
 
     /**

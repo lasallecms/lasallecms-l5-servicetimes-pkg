@@ -1,6 +1,6 @@
 <?php
 
-namespace Lasallecms\Servicetimes;
+namespace Lasallecms\Servicetimes\Http\Controllers;
 
 /**
  *
@@ -30,42 +30,11 @@ namespace Lasallecms\Servicetimes;
  *
  */
 
-class Version
+// LaSalle Software
+use Lasallecms\Servicetimes\Http\Controllers\Controllers;
+
+
+class ServicetimesController extends Controller
 {
-    /**
-     * This package's version number.
-     *
-     * @var string
-     */
-    const VERSION = '1.0.1';
 
-
-    /**
-     * This package's name.
-     *
-     * @var string
-     */
-    const PACKAGE = 'Service Times package for LaSalleCMS';
-
-
-    /**
-     * Get the version number of this package.
-     *
-     * @return string
-     */
-    public function version()
-    {
-        return static::VERSION;
-    }
-
-
-    /**
-     * Get the name of this package.
-     *
-     * @return string
-     */
-    public function packageName()
-    {
-        return static::PACKAGE;
-    }
 }
